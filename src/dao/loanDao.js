@@ -19,8 +19,8 @@ class LoanDao {
     static async createCustomer(customerId) {
         const customer = await DatabaseService.executeQuery('createCustomer', [
             customerId,
-            `Customer ${customerId}`,
-            `customer${customerId}@example.com`
+            `Nestegg Customer ${customerId}`,
+            `customer${customerId}@nestegg.com`
         ]);
         return customer;
     }
