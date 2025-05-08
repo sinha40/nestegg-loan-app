@@ -10,6 +10,7 @@ A Node.js backend service for processing loan applications, built with Express.j
 - Secure API design with Helmet
 - PostgreSQL database integration
 - RESTful API endpoints
+- Deploy via Github Action(CI/CD)
 
 ## Prerequisites
 
@@ -21,8 +22,8 @@ A Node.js backend service for processing loan applications, built with Express.j
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd loan-application-api
+git clone git@github.com:sinha40/nestegg-loan-app.git
+cd nestegg-loan-app
 ```
 
 2. Install dependencies:
@@ -98,7 +99,7 @@ Whenever you commit code or merge another branch in deployment branch, it will a
 
 ## AI usage
 - Used AI to correct documentation
-- User chatgpt to how to use Aws EB, rds with EB and github action ?
+- Used AI to learn how to use AWS Elastic Beanstalk, connect RDS with EB, and set up deployment using GitHub Actions
 - Error resolution
 
 ## Extra
