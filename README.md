@@ -68,9 +68,9 @@ npm start
 
 ## Security Features
 
-- Input validation using express-validator
+- Input validation using joi validator
 - Security headers with Helmet
 - CORS enabled
 - SQL injection prevention using parameterized queries
 - Error handling middleware
-- Rate limiting for get and post
+- Rate limiting for get and post api request to avoid attack
