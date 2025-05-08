@@ -11,6 +11,7 @@ A Node.js backend service for processing loan applications, built with Express.j
 - PostgreSQL database integration
 - RESTful API endpoints
 - Deploy via Github Action(CI/CD)
+- Added maintenance mode (env.MAINTENANCE_MODE == "true")
 
 ## Prerequisites
 

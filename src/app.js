@@ -34,6 +34,16 @@ const postLimiter = rateLimit({
     legacyHeaders: false,
 });
 
+// Check for maintance mode
+app.use((req, res, next) => {
+    const isMaintenanceMode = process.env.MAINTENANCE_MODE === 'true';
+    if (isMaintenanceMode) {
+        res.status(503).json({ success: false, error: 'Maintenance mode is active. We will be back soon!' });
+    } else {
+        next();
+    }
+});
+
 // Apply rate limiting based on HTTP method
 app.use((req, res, next) => {
     if (req.method === 'GET') {
