@@ -100,3 +100,6 @@ Whenever you commit code or merge another branch in deployment branch, it will a
 - Used AI to correct documentation
 - User chatgpt to how to use Aws EB, rds with EB and github action ?
 - Error resolution
+
+## Extra
+1. Added inmemory cache layer to avoid calling db everytime, this way we can get faster response and low query rate on our db
