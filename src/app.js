@@ -9,6 +9,7 @@ const { initializeDatabase } = require('./db/init');
 
 const app = express();
 
+app.set('trust proxy', 1);
 // Rate limiting configuration for GET requests
 const getLimiter = rateLimit({
     windowMs: parseInt(process.env.GET_RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute default
