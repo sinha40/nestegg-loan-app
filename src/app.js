@@ -9,7 +9,7 @@ const { initializeDatabase } = require('./db/init');
 
 const app = express();
 
-// app.set('trust proxy', 1);
+app.set('trust proxy', 1);
 // Rate limiting configuration for GET requests
 // const getLimiter = rateLimit({
 //     windowMs: parseInt(process.env.GET_RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute default
@@ -51,8 +51,8 @@ app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON bodies
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+    res.status(200).send('OK');
+  });
 // Routes
 app.use('/api', loanRoutes);
 
