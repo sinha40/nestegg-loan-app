@@ -9,41 +9,41 @@ const { initializeDatabase } = require('./db/init');
 
 const app = express();
 
-app.set('trust proxy', 1);
+// app.set('trust proxy', 1);
 // Rate limiting configuration for GET requests
-const getLimiter = rateLimit({
-    windowMs: parseInt(process.env.GET_RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute default
-    max: parseInt(process.env.GET_RATE_LIMIT_MAX) || 10, // 10 requests default
-    message: {
-        success: false,
-        error: 'Too many GET requests from this IP, please try again after a minute'
-    },
-    standardHeaders: true,
-    legacyHeaders: false,
-});
+// const getLimiter = rateLimit({
+//     windowMs: parseInt(process.env.GET_RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute default
+//     max: parseInt(process.env.GET_RATE_LIMIT_MAX) || 10, // 10 requests default
+//     message: {
+//         success: false,
+//         error: 'Too many GET requests from this IP, please try again after a minute'
+//     },
+//     standardHeaders: true,
+//     legacyHeaders: false,
+// });
 
-// Rate limiting configuration for POST requests
-const postLimiter = rateLimit({
-    windowMs: parseInt(process.env.POST_RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute default
-    max: parseInt(process.env.POST_RATE_LIMIT_MAX) || 2, // 2 requests default
-    message: {
-        success: false,
-        error: 'Too many POST requests from this IP, please try again after a minute'
-    },
-    standardHeaders: true,
-    legacyHeaders: false,
-});
+// // Rate limiting configuration for POST requests
+// const postLimiter = rateLimit({
+//     windowMs: parseInt(process.env.POST_RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute default
+//     max: parseInt(process.env.POST_RATE_LIMIT_MAX) || 2, // 2 requests default
+//     message: {
+//         success: false,
+//         error: 'Too many POST requests from this IP, please try again after a minute'
+//     },
+//     standardHeaders: true,
+//     legacyHeaders: false,
+// });
 
-// Apply rate limiting based on HTTP method
-app.use((req, res, next) => {
-    if (req.method === 'GET') {
-        getLimiter(req, res, next);
-    } else if (req.method === 'POST') {
-        postLimiter(req, res, next);
-    } else {
-        next();
-    }
-});
+// // Apply rate limiting based on HTTP method
+// app.use((req, res, next) => {
+//     if (req.method === 'GET') {
+//         getLimiter(req, res, next);
+//     } else if (req.method === 'POST') {
+//         postLimiter(req, res, next);
+//     } else {
+//         next();
+//     }
+// });
 
 // Middleware
 app.use(helmet()); // Security headers
