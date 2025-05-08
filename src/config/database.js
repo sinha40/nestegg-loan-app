@@ -2,6 +2,7 @@ const { Pool } = require('pg');
 require('dotenv').config();
 
 // Configure pool with optimal settings for high throughput
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD, 'Type:', typeof process.env.DB_PASSWORD);
 const pool = new Pool({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,
