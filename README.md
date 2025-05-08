@@ -30,16 +30,7 @@ cd loan-application-api
 npm install
 ```
 
-3. Create a PostgreSQL database and update the `.env` file with your database credentials:
-```
-PORT=3000
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=loan_app_db
-DB_USER=your_username
-DB_PASSWORD=your_password
-NODE_ENV=development
-```
+3. Create a PostgreSQL database and update the `.env` file with your database credentials
 
 4. Initialize the database schema:
 ```bash
@@ -82,28 +73,4 @@ npm start
 - CORS enabled
 - SQL injection prevention using parameterized queries
 - Error handling middleware
-
-## Development
-
-The project structure follows a modular architecture:
-```
-src/
-├── config/         # Database and environment configuration
-├── controllers/    # Request handlers
-├── middleware/     # Custom middleware
-├── models/         # Database models
-├── routes/         # API routes
-├── services/       # Business logic
-└── app.js         # Application entry point
-```
-
-## Testing
-
-Run tests:
-```bash
-npm test
-```
-
-## License
-
-ISC 
+- Rate limiting for get and post
